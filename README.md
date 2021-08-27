@@ -202,10 +202,24 @@ To include global CSS declared in the main HTML document, you must add the attri
     <link href="./main.css" rel="stylesheet" global></link>
 ```
 
+Add some side effect after the render finished
+----------------------------------------------
+
+The mounted callback will be executed after the renders fully completes.
+
+```js
+function Button ({ mounted }) {
+    const click = (ev) => console.log(ev);
+    mounted(() => {
+        window.addEventListener('click', click);
+    });
+}
+```
+
 Cleanup your mess
 -----------------
 
-Add a callback function, so when you component is disconnected from the DOM, you can do some stuff.
+When you component is disconnected from the DOM, you can do some stuff.
 
 ```js
 function Button ({ cleanup }) {
