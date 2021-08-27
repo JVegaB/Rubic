@@ -196,6 +196,12 @@ You can make your own CSS generators
     }
 ```
 
+To include global CSS declared in the main HTML document, you must add the attribute `global`
+
+```html
+    <link href="./main.css" rel="stylesheet" global></link>
+```
+
 Cleanup your mess
 -----------------
 
