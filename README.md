@@ -195,3 +195,19 @@ You can make your own CSS generators
         `;
     }
 ```
+
+Cleanup your mess
+-----------------
+
+Add a callback function, so when you component is disconnected from the DOM, you can do some stuff.
+
+```js
+function Button ({ cleanup }) {
+    const click = (ev) => console.log(ev);
+
+    window.addEventListener('click', click);
+
+    cleanup(() => window.removeEventListener('click', click));
+    return ``;
+}
+```
